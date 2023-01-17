@@ -1,5 +1,5 @@
 
-/*aqui estaremos anotando todo lo que vamos aprendiendo de c# 
+/*aqui estare anotando todo lo que vamos aprendiendo de c# 
  
  c# es muy parecido a JS 
 
