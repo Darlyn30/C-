@@ -1,0 +1,15 @@
+C:\Users\darlyn\Desktop\Project\getrequest\bin\Debug\net7.0\getrequest.exe
+C:\Users\darlyn\Desktop\Project\getrequest\bin\Debug\net7.0\getrequest.deps.json
+C:\Users\darlyn\Desktop\Project\getrequest\bin\Debug\net7.0\getrequest.runtimeconfig.json
+C:\Users\darlyn\Desktop\Project\getrequest\bin\Debug\net7.0\getrequest.dll
+C:\Users\darlyn\Desktop\Project\getrequest\bin\Debug\net7.0\getrequest.pdb
+C:\Users\darlyn\Desktop\Project\getrequest\obj\Debug\net7.0\getrequest.csproj.AssemblyReference.cache
+C:\Users\darlyn\Desktop\Project\getrequest\obj\Debug\net7.0\getrequest.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\darlyn\Desktop\Project\getrequest\obj\Debug\net7.0\getrequest.AssemblyInfoInputs.cache
+C:\Users\darlyn\Desktop\Project\getrequest\obj\Debug\net7.0\getrequest.AssemblyInfo.cs
+C:\Users\darlyn\Desktop\Project\getrequest\obj\Debug\net7.0\getrequest.csproj.CoreCompileInputs.cache
+C:\Users\darlyn\Desktop\Project\getrequest\obj\Debug\net7.0\getrequest.dll
+C:\Users\darlyn\Desktop\Project\getrequest\obj\Debug\net7.0\refint\getrequest.dll
+C:\Users\darlyn\Desktop\Project\getrequest\obj\Debug\net7.0\getrequest.pdb
+C:\Users\darlyn\Desktop\Project\getrequest\obj\Debug\net7.0\getrequest.genruntimeconfig.cache
+C:\Users\darlyn\Desktop\Project\getrequest\obj\Debug\net7.0\ref\getrequest.dll
