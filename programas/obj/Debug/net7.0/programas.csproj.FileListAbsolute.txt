@@ -1,0 +1,15 @@
+C:\Users\darlyn\Desktop\Project\programas\bin\Debug\net7.0\programas.exe
+C:\Users\darlyn\Desktop\Project\programas\bin\Debug\net7.0\programas.deps.json
+C:\Users\darlyn\Desktop\Project\programas\bin\Debug\net7.0\programas.runtimeconfig.json
+C:\Users\darlyn\Desktop\Project\programas\bin\Debug\net7.0\programas.dll
+C:\Users\darlyn\Desktop\Project\programas\bin\Debug\net7.0\programas.pdb
+C:\Users\darlyn\Desktop\Project\programas\obj\Debug\net7.0\programas.csproj.AssemblyReference.cache
+C:\Users\darlyn\Desktop\Project\programas\obj\Debug\net7.0\programas.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\darlyn\Desktop\Project\programas\obj\Debug\net7.0\programas.AssemblyInfoInputs.cache
+C:\Users\darlyn\Desktop\Project\programas\obj\Debug\net7.0\programas.AssemblyInfo.cs
+C:\Users\darlyn\Desktop\Project\programas\obj\Debug\net7.0\programas.csproj.CoreCompileInputs.cache
+C:\Users\darlyn\Desktop\Project\programas\obj\Debug\net7.0\programas.dll
+C:\Users\darlyn\Desktop\Project\programas\obj\Debug\net7.0\refint\programas.dll
+C:\Users\darlyn\Desktop\Project\programas\obj\Debug\net7.0\programas.pdb
+C:\Users\darlyn\Desktop\Project\programas\obj\Debug\net7.0\programas.genruntimeconfig.cache
+C:\Users\darlyn\Desktop\Project\programas\obj\Debug\net7.0\ref\programas.dll
