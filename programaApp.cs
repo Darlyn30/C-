@@ -1,7 +1,7 @@
 /*
 pedir la edad de un usuario y validar si es mayor o menor de edad, si es mayor a 18, es mayor de edad y si no, es menor de edad.
 */
-/*
+
 int edad;
 
 Console.WriteLine("que edad tienes");
@@ -12,14 +12,14 @@ if(edad >=18){ // dandole la condicion a cumplir si es verdadera
     Console.WriteLine("eres mayor de edad");
 } else{
     Console.WriteLine("eres menor de edad"); // si es falsa hara esto
-} */
+} 
 
 //segundo ejercicio
 /*
 hacer un porgrama que pida dos veces  una contraseña, si las dos contraseñas son iguales,
  mostrar un mensaje diciendo que la contraseña es valida, en el caso contrario, mostrar que la contraseña es incorrecta
 */
-/*
+
 Console.WriteLine("escriba una contraseña");
 var password = Console.ReadLine();
 Console.WriteLine("confirme la contraseña");
@@ -33,7 +33,7 @@ if(password == passwordConfirm){
 } else{
     Console.WriteLine("contraseña incorrecta");
     Console.WriteLine("ingrese otra vez la contraseña");
-}*/
+}
 
 //3er ejercicicio
 /*
