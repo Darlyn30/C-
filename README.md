@@ -1,2 +1,2 @@
-# C-
+# C#
 aprendiendo c# peticion del profesor
