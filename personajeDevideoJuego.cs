@@ -1,5 +1,3 @@
-
- 
 Console.WriteLine(@"SALUDOS CAMPEON, BIENVENIDO A DUNGEON: ");// nombre del projecto
 
 Console.WriteLine();
@@ -46,21 +44,49 @@ if(ataque == "s"){ // si es true
     VIDA = VIDA - 40;
     Console.WriteLine($"su vida actualmente es {VIDA}/350");
     Console.WriteLine("la vida actual del boss es: ");
-    while(bossHealth >= 0){
+  
 
-        Console.WriteLine(bossHealth - 30);
-        //bossHealth = 0;
+    while(bossHealth > 0 ){
+        bossHealth = bossHealth - 50;
+        Console.WriteLine(bossHealth);
+        bossHealth = bossHealth-50;
+        Console.WriteLine(bossHealth);
+        bossHealth = 0;
+        Console.WriteLine($"la vida del boss es: {bossHealth}" );
+        
     }
-//  while(VIDA != 0) {
-//      VIDA = VIDA - 30; 
-//      Console.WriteLine(VIDA-30);
-//      VIDA = 0;
+ while(bossHealth != 0) {
+     VIDA = VIDA - 30; 
+     Console.WriteLine(VIDA-30);
+     VIDA = 0;
 }
- else{}
+if(VIDA == 0){
+    Console.WriteLine("has perdido");
+  
+} else {}
 
 if (bossHealth == 0){
     Console.WriteLine("se termino el juego: gracias por jugar");
-} else{}
+} else {}
+while(VIDA == 0){
+    Console.WriteLine("deseas continuar?");
+      var continuar = Console.ReadLine();
+      if(continuar == "s"){
+        
+Console.WriteLine(@"SALUDOS CAMPEON, BIENVENIDO A DUNGEON: ");// nombre del projecto
+
+Console.WriteLine();
+Console.WriteLine("Presiona cualquier tecla para empezar");
+Console.ReadKey();
+Console.Clear();
+Console.WriteLine(@"SALUDOS CAMPEON, BIENVENIDO A LA  DUNGEON: ");
+Console.WriteLine(@"Selecciona uno de los Heroes ");
+        JUGADOR = Convert.ToInt32(Console.ReadLine());
+      }
+}
+}
+
+
 
 // for(var i = bossHealth; i <=0; i-- ){
 //     Console.WriteLine("la vida actual del boss final es " +bossHealth + "/270");
@@ -73,3 +99,4 @@ if (bossHealth == 0){
 //     bossHealth = bossHealth-30;
 //     Console.WriteLine(bossHealth);
 // }
+
