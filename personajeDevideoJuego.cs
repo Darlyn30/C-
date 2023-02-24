@@ -1,7 +1,7 @@
-
-
-
-
+ 
+ 
+ 
+ 
 Console.WriteLine(@"SALUDOS CAMPEON, BIENVENIDO A DUNGEON: ");// nombre del projecto
 
 Console.WriteLine();
@@ -46,18 +46,16 @@ if(JUGADOR == 3){
          } else if(ataque == 3){
             Console.WriteLine("usaste flecha con veneno y no le hiciste suficiente daño");
             Console.WriteLine($"morirste y contigo toda la dungeon y terminaste con {VIDA - VIDA} vidas");
-         } else {}
-
-         while(ataque != 1){
-            Console.WriteLine("JUEGO TERMINADO, NO DECIDISTE JUGAR");
+         } else {
+            // si decide ponerse de trol y elegir una habilidad que no esta entre las opciones, se cierra automaticamente el juego
+            if(ataque != 1){
+                Console.WriteLine("JUEGO TERMINADO, NO DECIDISTE JUGAR");
+            } else if(ataque != 2){
+                Console.WriteLine("JUEGO TERMINADO, NO DECIDISTE JUGAR");
+            } else if(ataque != 3){
+                Console.WriteLine("JUEGO TERMINADO, NO DECIDISTE JUGAR");
+            }
          }
-         while(ataque != 2){
-            Console.WriteLine("JUEGO TERMINADO, NO DECIDISTE JUGAR");
-         }
-         while(ataque != 3){
-            Console.WriteLine("JUEGO TERMINADO, NO DECIDISTE JUGAR");
-         }
-         
      }
 }
 
