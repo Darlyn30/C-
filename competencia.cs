@@ -17,12 +17,14 @@ namespace competencia {
                 "yeicol jose camacho calderon", "yeremi sanchez rodriguez"
 
             };
+            List<string> alumnos = new List<string>(names.Length);
             Console.WriteLine("presione una tecla para continuar...");
             Console.ReadKey();
             Console.WriteLine("deseas mostrar la lista con todos los integrantes?");
             Console.WriteLine("S/n");
             char ans = Console.ReadKey().KeyChar;
-            // respuesta del char
+
+            
              if(ans == 's'){
                 Console.WriteLine("aqui esta la lista: ");
                 mostrarEstudiantes(names);
@@ -51,7 +53,6 @@ namespace competencia {
             // Console.WriteLine("\n");
 
         }
-        // funciones
         static void mostrarEstudiantes(string[] names){
             foreach (string name in names){
                 Console.WriteLine(name);
@@ -61,4 +62,3 @@ namespace competencia {
         }
     }
 }
-
