@@ -3,7 +3,8 @@ using System;
 namespace competencia {
     class Program {
         static void Main (string [] args) {
-            Random randomNumber = new Random();
+            
+            Random namesRandom = new Random();
             string[] names = {
                 "albani nicole solano", "alvaro estefan santana corporan", "anderson david montero gonzalez", "andy mu?oz capellan", "antony jose mendez guerrero",
                 "benjamin aguero madera", "carlos daniel tejada marte", "carlos enrique matos feliz", "christopher franco veras", "cruz abel montero mercado",
@@ -16,18 +17,32 @@ namespace competencia {
                 "yeicol jose camacho calderon", "yeremi sanchez rodriguez"
 
             };
-
-            int firstName = randomNumber.Next(0,43);
-            int secondName = randomNumber.Next(0,43);
-
-            if( firstName == secondName){
-                while(firstName == secondName){
-                    secondName = randomNumber.Next(0,43);
-                }
+            Console.WriteLine("presione una tecla para continuar...");
+            Console.ReadKey();
+            Console.WriteLine("deseas mostrar la lista con todos los integrantes?");
+            Console.WriteLine("S/n");
+            char ans = Console.ReadKey().KeyChar;
+            // respuesta del char
+             if(ans == 's'){
+                Console.WriteLine("aqui esta la lista: ");
+                mostrarEstudiantes(names);
+             } else {
+                Console.WriteLine("ok no se mostrara la lista");
+             }
+             Console.WriteLine("continuemos");
+             Console.WriteLine("presione cualquier tecla para continuar...");
+             Console.ReadKey();
+                Console.Clear();
+            int firstName = namesRandom.Next(0,43);
+            int secondName = namesRandom.Next(0,43);
+            while(firstName == secondName){
+                secondName = namesRandom.Next(0,43);
             }
-            Console.WriteLine(names[firstName] + " pase al frente");
+            Console.WriteLine(names[firstName] + " primer agraciado, pase al frente");
+            Console.WriteLine("presione una tecla para mostrar el proximo:");
+            Console.ReadKey();
             Console.WriteLine("\n");
-            Console.WriteLine(names[secondName] + " pase al frente tambien " + "que programa su compa?");
+            Console.WriteLine(names[secondName] + " pase al frente tambien, " + "que programara su compa?");
 
             // Console.WriteLine("\n");
             // foreach (string name in names){
@@ -36,5 +51,14 @@ namespace competencia {
             // Console.WriteLine("\n");
 
         }
+        // funciones
+        static void mostrarEstudiantes(string[] names){
+            foreach (string name in names){
+                Console.WriteLine(name);
+            }
+            Console.WriteLine("\n");
+          
+        }
     }
 }
+
