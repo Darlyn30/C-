@@ -1,11 +1,8 @@
 using System;
-namespace competencia
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            Random namesRandom = new Random();
+namespace competencia {
+    class Program {
+        static void Main(string[] args) {
+              Random namesRandom = new Random();
 
             List<string> names = new List<string> {
                 "albani nicole solano", "alvaro estefan santana corporan", "anderson david montero gonzalez", "andy mu?oz capellan", "antony jose mendez guerrero",
@@ -30,13 +27,11 @@ namespace competencia
 
             char ans = Console.ReadKey().KeyChar;
 
-            if (ans == 's')
-            {
+            if (ans == 's'){
                 Console.WriteLine("\naqui esta la lista: ");
                 mostrarEstudiantes(names); // esta es una funcion
             }
-            else
-            {
+            else {
                 Console.WriteLine("\nok no se mostrara la lista");
             }
 
@@ -45,15 +40,13 @@ namespace competencia
             Console.WriteLine("presione cualquier tecla para continuar...\n");
 
             // se utiliza un ciclo infinito para esperar a que se presione cualquier tecla
-            while (true)
-            {
+            while (true){
                 // se genera un numero aleatorio entre el inicio de la lista y el ultimo elemento de esta
                 firstName = namesRandom.Next(0, namesLength);
                 secondName = namesRandom.Next(0, namesLength);
 
                 // se verifica que el primer numero y el segundo numero generados nunca sean iguales
-                while (firstName == secondName)
-                {
+                while (firstName == secondName){
                     secondName = namesRandom.Next(0, namesLength);
                 }
 
@@ -78,10 +71,8 @@ namespace competencia
                 }
             }
         }
-        static void mostrarEstudiantes(List<string> names) // esto es una funcion que sirve para mostrar la lista
-        {
-            foreach (string name in names)
-            {
+        static void mostrarEstudiantes(List<string> names){ // esto es una funcion que sirve para mostrar la lista
+            foreach (string name in names){
                 Console.WriteLine(name);
             }
             Console.WriteLine("\n");
