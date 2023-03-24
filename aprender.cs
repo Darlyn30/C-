@@ -10,7 +10,7 @@ en el code hay que hacer unas cuantas cosas para hacer un console program en #*/
 // variables
 
 var nombre = "darlyn";
-var apellido = "olivo"; //solo se pueden utilizar comillas dobles en c#
+var apellido = "olivo"; //solo se pueden utilizar comillas dobles en c# a no ser que sea de un tipo "CHAR" que es un caracter, ahi si se usa comilla simple
 
 Console.WriteLine("hola cual es su nombre"); //esto es un "console.log" de JS para que te imprima por consola
 Console.WriteLine(nombre); //esta linea me mostrara por consola el valor de la variable
