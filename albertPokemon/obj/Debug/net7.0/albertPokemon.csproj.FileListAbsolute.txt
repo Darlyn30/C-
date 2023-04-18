@@ -1,0 +1,15 @@
+D:\Descargas\albert\albertPokemon\bin\Debug\net7.0\albertPokemon.exe
+D:\Descargas\albert\albertPokemon\bin\Debug\net7.0\albertPokemon.deps.json
+D:\Descargas\albert\albertPokemon\bin\Debug\net7.0\albertPokemon.runtimeconfig.json
+D:\Descargas\albert\albertPokemon\bin\Debug\net7.0\albertPokemon.dll
+D:\Descargas\albert\albertPokemon\bin\Debug\net7.0\albertPokemon.pdb
+D:\Descargas\albert\albertPokemon\obj\Debug\net7.0\albertPokemon.csproj.AssemblyReference.cache
+D:\Descargas\albert\albertPokemon\obj\Debug\net7.0\albertPokemon.GeneratedMSBuildEditorConfig.editorconfig
+D:\Descargas\albert\albertPokemon\obj\Debug\net7.0\albertPokemon.AssemblyInfoInputs.cache
+D:\Descargas\albert\albertPokemon\obj\Debug\net7.0\albertPokemon.AssemblyInfo.cs
+D:\Descargas\albert\albertPokemon\obj\Debug\net7.0\albertPokemon.csproj.CoreCompileInputs.cache
+D:\Descargas\albert\albertPokemon\obj\Debug\net7.0\albertPokemon.dll
+D:\Descargas\albert\albertPokemon\obj\Debug\net7.0\refint\albertPokemon.dll
+D:\Descargas\albert\albertPokemon\obj\Debug\net7.0\albertPokemon.pdb
+D:\Descargas\albert\albertPokemon\obj\Debug\net7.0\albertPokemon.genruntimeconfig.cache
+D:\Descargas\albert\albertPokemon\obj\Debug\net7.0\ref\albertPokemon.dll
