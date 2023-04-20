@@ -1,12 +1,15 @@
 using System;
 namespace projectoFinal {
     class Program {
+
+        static List<string> nombres = new List<string>();
+        static List<string> apellidos = new List<string>();
+        static List<string> tels = new List<string>();
+        static List<string> direcciones = new List<string>();
+        static List<string> correos = new List<string>();
+       // static List<string> 
+        
         static void Main(string[] args){
-            List<string> nombres = new List<string> ();
-            List<string> apellidos = new List<string> ();
-            List<int> tels = new List<int> ();
-            List<string> direcciones = new List<string> ();
-            List<string> correos = new List<string> ();
             Console.WriteLine("Bienvenido a nuestro programa \n");
             Console.WriteLine("Presione la tecla 'a' para continuar . . .");
             char brand = Console.ReadKey().KeyChar;
@@ -28,11 +31,6 @@ namespace projectoFinal {
             }
         }
         static void menu(){ // menu que se lanza
-            List<string>nombres = new List<string> {};
-            List<string> apellidos = new List<string> ();
-            List<int> tels = new List<int> ();
-            List<string> direcciones = new List<string> ();
-            List<string> correos = new List<string> ();
             List<string> eventos  = new List<string> ();
             Console.Clear();
             Console.WriteLine("\x1B[0;32m***********MENU***********\x1B[0;37m\n");
@@ -65,7 +63,7 @@ namespace projectoFinal {
                     break;
             }
         }
-        static void contacto(int elegir, List<string> nombres, List<string> apellidos, List<int> tels, List<string> direcciones, List<string> correos){
+        static void contacto(int elegir, List<string> nombres, List<string> apellidos, List<string> tels, List<string> direcciones, List<string> correos){
             Console.Clear();
             Console.WriteLine("Estas en contacto: \n");
             Console.WriteLine("que deseas hacer: \n");
@@ -79,7 +77,7 @@ namespace projectoFinal {
             int menuContacto = Convert.ToInt32(Console.ReadLine());
             switch(menuContacto){
                 case 1:
-                    crearContacto(menuContacto, nombres);
+                    crearContacto(menuContacto, nombres, apellidos, tels, direcciones, correos);
                     break;
                 case 2:
                     editarContacto(menuContacto, elegir, nombres, apellidos, tels, direcciones, correos);
@@ -101,31 +99,39 @@ namespace projectoFinal {
                     break;
             }
         }
-        static void crearContacto(int menuContacto, List<string> nombres){
+        static void crearContacto(int menuContacto, List<string> nombres, List<string> apellidos, List<string> tels, List<string> direcciones, List<string> correos){
             Console.Clear();
             Console.Write("Crear contacto: \n");
             Console.Write("Nombre: ");
-            string? nom = Console.ReadLine();
-            
+            string? nom = Console.ReadLine() ?? "";
+
             Console.Write("Apellido: ");
-            string? last = Console.ReadLine();
+            string? last = Console.ReadLine() ?? "";
             
             Console.Write("Telefono: ");
-            int tel = Convert.ToInt32(Console.ReadLine());
+            string? tel = Console.ReadLine() ?? "";
             //listaTelefonos(tel);
             Console.Write("Direccion: ");
-            string? adress = Console.ReadLine();
+            string? adress = Console.ReadLine() ?? "";
             
             Console.Write("Email: ");
-            string? mail = Console.ReadLine();
+            string? mail = Console.ReadLine() ?? "";
             
             Console.WriteLine("\n");
             Console.WriteLine("Presiona 's' para guardar");
             char save = Console.ReadKey().KeyChar;
+
             if(save == 's'){
                 Console.Clear();
                 Console.WriteLine("Contacto guardado correctamente! \n");
+
+                // Guardar elementos en sus respectivos arrays
                 nombres.Add(nom!);
+                apellidos.Add(last!);
+                tels.Add(tel!);
+                direcciones.Add(adress!);
+                correos.Add(mail!);
+
                 // listanombre(nom!);
                 // listaApellido(last!);
                 // listaTelefonos(tel);
@@ -146,28 +152,29 @@ namespace projectoFinal {
                 }
             }
         }
-        static void listanombre(string nom){
-            List<string>nombres = new List<string> {};
-            nombres.Add(nom);
-            // Console.WriteLine(nom);
-        }
-        static void  listaApellido(string last){
-            List<string>apellidos = new List<string> {};
-            apellidos.Add(last);
-        }
-        static void listaTelefonos( int tel){
-            List<int>tels = new List<int> {};
-            tels.Add(tel);
-        }
-        static void listaDireccion(string adress){
-            List<string>direcciones = new List<string> {};
-            direcciones.Add(adress);
-        }
-        static void listaMail(string mail){
-            List<string>correos = new List<string> {};
-            correos.Add(mail);
-        }
-        static void editarContacto(int menuContacto, int elegir, List<string> nombres, List<string> apellidos, List<int> tels, List<string> direcciones, List<string> correos){
+        // static void listanombre(string nom){
+        //     List<string>nombres = new List<string> {};
+        //     nombres.Add(nom);
+        //     // Console.WriteLine(nom);
+        // }
+        // static void  listaApellido(string last){
+        //     List<string>apellidos = new List<string> {};
+        //     apellidos.Add(last);
+        // }
+        // static void listaTelefonos( int tel){
+        //     List<int>tels = new List<int> {};
+        //     tels.Add(tel);
+        // }
+        // static void listaDireccion(string adress){
+        //     List<string>direcciones = new List<string> {};
+        //     direcciones.Add(adress);
+        // }
+        // static void listaMail(string mail){
+        //     List<string>correos = new List<string> {};
+        //     correos.Add(mail);
+        // }
+
+        static void editarContacto(int menuContacto, int elegir, List<string> nombres, List<string> apellidos, List<string> tels, List<string> direcciones, List<string> correos){
             Console.Clear();
             Console.WriteLine("Editar: \n");
             Console.WriteLine("Que desea editar? \n");
@@ -183,7 +190,7 @@ namespace projectoFinal {
                 case 1:
                     Console.WriteLine("Nuevo nombre: ");
                     string? nom = Console.ReadLine();
-                    listanombre(nom!);
+                    // listanombre(nom!);
                     Console.WriteLine("Presione 's' para guardar");
                     char save = Console.ReadKey().KeyChar;
                     if(save == 's'){
@@ -194,22 +201,22 @@ namespace projectoFinal {
                 case 2:
                     Console.WriteLine("Nuevo apellido");
                     string? last = Console.ReadLine();
-                    listaApellido(last!);
+                    // listaApellido(last!);
                     break;
                 case 3: 
                     Console.WriteLine("Nuevo telefono");
                     int tel = Convert.ToInt32(Console.ReadLine());
-                    listaTelefonos(tel!);
+                    // listaTelefonos(tel!);
                     break;
                 case 4: 
                     Console.WriteLine("Nueva direccion");
                     string? adress = Console.ReadLine();
-                    listaDireccion(adress!);
+                    // listaDireccion(adress!);
                     break;
                 case 5: 
                     Console.WriteLine("Nuevo correo");
                     string? mail = Console.ReadLine();
-                    listaMail(mail!);
+                    // listaMail(mail!);
                     break;
                 case 6:
                     contacto(elegir, nombres, apellidos, tels, direcciones, correos);
@@ -220,7 +227,7 @@ namespace projectoFinal {
                 
             }
         }
-        static void borrarContacto(int menuContacto, List<string> nombres, List<string> apellidos, List<int> tels, List<string> direcciones, List<string> correos){
+        static void borrarContacto(int menuContacto, List<string> nombres, List<string> apellidos, List<string> tels, List<string> direcciones, List<string> correos){
             Console.Clear();
             Console.WriteLine("Borrar contacto: \n");
             Console.WriteLine("Presione cualquier tecla para continuar . . .");
@@ -277,24 +284,26 @@ namespace projectoFinal {
            }
            
         }
-        static void mostrarContacto(int menuContacto, List<string> nombres, List<string> apellidos, List<int> tels, List<string> direcciones, List<string> correos){
-            foreach(string nombre in nombres){
-                Console.WriteLine(nombre);
-            }
-            // foreach(string apellido in apellidos){
-            //     Console.WriteLine(apellido);
-            // }
-            // foreach(int tel in tels){
-            //     Console.WriteLine(tels);
-            // }
-            // foreach(string direccion in direcciones){
-            //     Console.WriteLine(direccion);
-            // }
-            // foreach(string mail in correos){
-            //     Console.WriteLine(mail);
-            // }
+        static void mostrarContacto(int menuContacto, List<string> nombres, List<string> apellidos, List<string> tels, List<string> direcciones, List<string> correos){
 
+            for (int i = 0; i < nombres.Count; i++) {
+                Console.WriteLine("Nombre: " + nombres[i]);
+                Console.WriteLine("Apellido: " + apellidos[i]);
+                Console.WriteLine("Telefono: " + tels[i]);
+                Console.WriteLine("Direccion: " + direcciones[i]);
+                Console.WriteLine("Email: " + correos[i]+ "\n");
+
+                }
+                Console.WriteLine("Presione '1' para volver atras");
+                Console.WriteLine("Presione 's' para salir");
+                char back = Console.ReadKey().KeyChar;
+                if(back == '1'){
+                    menu();
+                } else if(back == 's'){
+                    salir();
+                }
         }
+
         static void buscarContacto(int menuContacto, List<string> nombres){
             Console.WriteLine("Buscar contacto\n");
             
@@ -794,4 +803,3 @@ namespace projectoFinal {
         }
     }
 }
-
