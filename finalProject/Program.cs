@@ -33,6 +33,9 @@ namespace projectoFinal {
             Console.WriteLine("[elige una opcion]\n");
             Console.WriteLine("\x1B[0;32m***********MENU***********\x1B[0;37m\n");
             int elegir = Convert.ToInt32(Console.ReadLine());
+            double rd = 0;
+            double eur = 0;
+            double dolar = 0;
             // if(elegir == 1){
             //     contacto(elegir);
             // }
@@ -44,7 +47,7 @@ namespace projectoFinal {
                     evento(elegir);
                     break;
                 case 3:
-                    utiliarios(elegir);
+                    utiliarios(elegir, rd, eur, dolar);
                     break;
                 case 4:
                     salir();
@@ -218,7 +221,7 @@ namespace projectoFinal {
         static void mostrarEvento(int menuEvento){}
 
         // UTILITARIOS
-        static void utiliarios(int elegir){ 
+        static void utiliarios(int elegir, double rd, double eur, double dolar){ 
             Console.Clear();
             Console.WriteLine("1) [Conversor de monedas]");
             Console.WriteLine("1) [Conversor de temperatura]");
@@ -228,6 +231,7 @@ namespace projectoFinal {
             elegir = Convert.ToInt32(Console.ReadLine());
             switch(elegir){
                 case 1:
+                    moneda(elegir, rd, eur, dolar);
                     break;
                 case 2:
                     break;
@@ -244,12 +248,95 @@ namespace projectoFinal {
                     while(elegir < 1 || elegir > 5){
                         Console.Clear();
                         Console.WriteLine("Opcion no disponible");
-                        utiliarios(elegir);
+                        utiliarios(elegir, rd, eur, dolar);
                     }
                     break;
             }
         }
+        static void moneda(int elegir, double rd, double eur, double dolar){
+            
+            Console.WriteLine("convertir a: \n");
+            e:
+            Console.WriteLine("1) [USD A RD$]");
+            Console.WriteLine("2) [USD A EUR]");
+            Console.WriteLine("3) [EUR A RD$]");
+            Console.WriteLine("4) [EUR A USD]");
+            Console.WriteLine("5) [RD$ A USD]");
+            Console.WriteLine("6) [RD A EUR]\n");
+            Console.WriteLine("7) [Volver]");
+            Console.WriteLine("8) [Salir]");
+            elegir = Convert.ToInt32(Console.ReadLine());
+            switch(elegir){
+                case 1:
+                    dolarRD(elegir, rd);
+                    break;
+                case 2:
+                    dolarEur(elegir, eur);
+                    break;
+                case 3: 
+                    eurRD(elegir, rd);
+                    break;
+                case 4:
+                    eurDolar(elegir, dolar);
+                    break;
+                case 5:
+                    rdDolar(elegir, dolar);
+                    break;
+                case 6:
+                    rdEur(elegir, eur);
+                    break;
+                case 7:
+                    utiliarios(elegir, rd, eur, dolar);
+                    break;
+                case 8:
+                    salir();
+                    break;
+                default:
+                Console.Clear();
+                Console.WriteLine("No existe la moneda");
+                    goto e;
+            }
+        }
+        static void dolarRD(int elegir, double rd){
+            Console.WriteLine("Ingrese moneda dominicana");
+            rd = Convert.ToDouble(Console.ReadLine());
+            double conver = Convert.ToDouble(rd / 55.16);
+            Console.WriteLine($"{rd} pesos son {conver} dolares");
+        }
+        static void dolarEur(int elegir, double eur){
+            Console.WriteLine("Ingresa moneda EUR");
+            eur = Convert.ToDouble(Console.ReadLine());
+            
+            double conver = Convert.ToDouble(eur / 0.98);
+            Console.WriteLine($"{eur} euros son {conver}");
+
+        }
+        static void eurRD(int elegir, double rd){
+            Console.WriteLine("Ingresa moneda dominicana");
+            rd = Convert.ToDouble(Console.ReadLine());
+            double conver = Convert.ToDouble(rd / 60.33);
+            Console.WriteLine($"{rd} pesos son {conver} euros");
+        }
+        static void eurDolar(int elegir, double dolar){
+            Console.WriteLine("Ingresa moneda dolar");
+            dolar = Convert.ToDouble(Console.ReadLine());
+            double  conver = Convert.ToDouble(dolar / 1.09);
+            Console.WriteLine($"{dolar} dolares son {conver} euros");
+        }
+        static void rdDolar(int elegir, double dolar){
+            Console.WriteLine("Ingresa moneda dolar");
+            dolar = Convert.ToDouble(Console.ReadLine());
+            double conver = Convert.ToDouble(dolar / 0.018);
+            Console.WriteLine($"{dolar} dolares son {conver} pesos dominicanos");
+        }
+        static void rdEur(int elegir, double eur){
+            Console.WriteLine("Ingresa moneda EUR");
+            eur = Convert.ToDouble(Console.ReadLine());
+            double conver = Convert.ToDouble(eur / 0.017);
+            Console.WriteLine($"{eur} euros son {conver} pesos dominicanos");
+        }
         static void calculadora(int elegir){
+            // animacion();
             Console.Clear();
             Console.Write("Ingresa el primer dato: ");
             int n1 = Convert.ToInt32(Console.ReadLine());
@@ -264,30 +351,22 @@ namespace projectoFinal {
             int n2 = Convert.ToInt32(Console.ReadLine());
             switch(operacion){
                 case '+':
-                    Console.WriteLine($"{n1} + {n2}");
+                    Console.WriteLine($"{n1} + {n2} = {n1+n2}");
                     break;
                 case '-':
-                    Console.WriteLine($"{n1} - {n2}");
+                    Console.WriteLine($"{n1} - {n2} = {n1-n2}");
                     break;
                 case '*':
-                    Console.WriteLine($"{n1} * {n2}");
+                    Console.WriteLine($"{n1} * {n2} = {n1*n2}");
                     break;
                 case '/':
-                    Console.WriteLine($"{n1} / {n2}");
+                    Console.WriteLine($"{n1} / {n2} = {n1/n2}");
                     break;
                 default:
-                    while(operacion != '+' || operacion != '-' || operacion != '*' || operacion != '/'){
-                        Console.Clear();
-                        Console.WriteLine("Operador no disponible\n");
-                        Console.WriteLine("+");
-                        Console.WriteLine("-");
-                        Console.WriteLine("*");
-                        Console.WriteLine("/ \n");
-                        Console.WriteLine("Ingresa el operador: ");
-                        operacion = Console.ReadKey().KeyChar;
-                        Console.ReadKey();
-                    }
+                    // while(operacion != '+' || operacion != '-' || operacion != '*' || operacion != '/'){
+
                     break;
+                  // goto i;
                 }
             Console.WriteLine("Presiona Cualquier tecla para continuar . . .");
             Console.ReadKey();
@@ -316,6 +395,5 @@ namespace projectoFinal {
             Console.WriteLine("ADIOS . . .");
             Environment.Exit(0);
         }
-
     }
 }
