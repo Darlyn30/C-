@@ -43,6 +43,12 @@ namespace projectoFinal {
                 case 2:
                     evento(elegir);
                     break;
+                case 3:
+                    utiliarios(elegir);
+                    break;
+                case 4:
+                    salir();
+                    break;
             }
         }
         static void contacto(int elegir){
@@ -53,9 +59,9 @@ namespace projectoFinal {
             Console.WriteLine("2) [Editar contacto]");
             Console.WriteLine("3) [Borrar contacto]");
             Console.WriteLine("4) [Buscar contacto]");
-            Console.WriteLine("4) [Mostrar contactos]");
-            Console.WriteLine("5) [Volver al menu principal]");
-            Console.WriteLine("5) [Salir]");
+            Console.WriteLine("5) [Mostrar contactos]");
+            Console.WriteLine("6) [Volver al menu principal]");
+            Console.WriteLine("7) [Salir]");
             int menuContacto = Convert.ToInt32(Console.ReadLine());
             switch(menuContacto){
                 case 1:
@@ -71,9 +77,12 @@ namespace projectoFinal {
                     mostrarContacto(menuContacto);
                     break;
                 case 5:
-                    menu();
+                    buscarContacto(menuContacto);
                     break;
                 case 6:
+                    menu();
+                    break;
+                case 7:
                     salir();
                     break;
             }
@@ -131,7 +140,9 @@ namespace projectoFinal {
             mostrarContacto(menuContacto);
         }
         static void mostrarContacto(int menuContacto){}
+        static void buscarContacto(int menuContacto){}
         static void evento(int elegir){
+            Console.Clear();
             Console.WriteLine("Estas en eventos: \n");
             Console.WriteLine("que deseas hacer: \n");
             Console.WriteLine("1) [Crear evento]");
@@ -173,6 +184,8 @@ namespace projectoFinal {
             string? nomEvent = Console.ReadLine();
             Console.Write("Fecha de evento: ");
             string? dateTime = Console.ReadLine();
+            Console.WriteLine("Lugar: ");
+            string? place = Console.ReadLine();
             Console.WriteLine("\n");
             Console.WriteLine("Presiona 's' para guardar . . .");
             char save = Console.ReadKey().KeyChar;
@@ -180,6 +193,7 @@ namespace projectoFinal {
                 Console.Clear();
                 Console.WriteLine("EVENTO GUARDADO CORRECTAMENTE!\n");
                 Console.WriteLine("Presione cualquier tecla para volver atras . . .");
+                Console.ReadKey();
                 Console.Clear();
                 evento(elegir);
             } else {
@@ -202,7 +216,103 @@ namespace projectoFinal {
         }
         static void buscarEvento(int menuEvento){}
         static void mostrarEvento(int menuEvento){}
+
+        // UTILITARIOS
+        static void utiliarios(int elegir){ 
+            Console.Clear();
+            Console.WriteLine("1) [Conversor de monedas]");
+            Console.WriteLine("1) [Conversor de temperatura]");
+            Console.WriteLine("3) [Calculadora]");
+            Console.WriteLine("4) [Volver]");
+            Console.WriteLine("5) [Salir]");
+            elegir = Convert.ToInt32(Console.ReadLine());
+            switch(elegir){
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    calculadora(elegir);
+                    break;
+                case 4: 
+                    menu();
+                    break;
+                case 5:
+                    salir();
+                    break;
+                default:
+                    while(elegir < 1 || elegir > 5){
+                        Console.Clear();
+                        Console.WriteLine("Opcion no disponible");
+                        utiliarios(elegir);
+                    }
+                    break;
+            }
+        }
+        static void calculadora(int elegir){
+            Console.Clear();
+            Console.Write("Ingresa el primer dato: ");
+            int n1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("+");
+            Console.WriteLine("-");
+            Console.WriteLine("*");
+            Console.WriteLine("/ \n");
+            Console.Write("Ingresa el operador: ");
+            char operacion = Console.ReadKey().KeyChar;
+            Console.ReadKey();
+            Console.WriteLine("Ingresa el segundo dato");
+            int n2 = Convert.ToInt32(Console.ReadLine());
+            switch(operacion){
+                case '+':
+                    Console.WriteLine($"{n1} + {n2}");
+                    break;
+                case '-':
+                    Console.WriteLine($"{n1} - {n2}");
+                    break;
+                case '*':
+                    Console.WriteLine($"{n1} * {n2}");
+                    break;
+                case '/':
+                    Console.WriteLine($"{n1} / {n2}");
+                    break;
+                default:
+                    while(operacion != '+' || operacion != '-' || operacion != '*' || operacion != '/'){
+                        Console.Clear();
+                        Console.WriteLine("Operador no disponible\n");
+                        Console.WriteLine("+");
+                        Console.WriteLine("-");
+                        Console.WriteLine("*");
+                        Console.WriteLine("/ \n");
+                        Console.WriteLine("Ingresa el operador: ");
+                        operacion = Console.ReadKey().KeyChar;
+                        Console.ReadKey();
+                    }
+                    break;
+                }
+            Console.WriteLine("Presiona Cualquier tecla para continuar . . .");
+            Console.ReadKey();
+            Console.Clear();
+            Console.WriteLine("Deseas hacer un nuevo calculo?\n");
+            Console.WriteLine("S/n\n");
+            Console.WriteLine("O presione 'b' para volver al menu principal");
+            char backCal = Console.ReadKey().KeyChar;
+            if(backCal == 's'){
+                calculadora(elegir);
+            } else if(backCal == 'b'){
+                menu();
+            } else if(backCal == 'n'){
+                salir();
+            } else {
+                while(backCal != 's' || backCal != 'b' || backCal != 'n'){
+                    Console.WriteLine("Deseas hacer un nuevo calculo?\n");
+                    Console.WriteLine("S/n\n");
+                    Console.WriteLine("O presione 'b' para volver al menu principal");
+                    backCal = Console.ReadKey().KeyChar;
+                }
+            }
+        }
         static void salir(){ //falta animacion de salida
+        Console.Clear();
             Console.WriteLine("ADIOS . . .");
             Environment.Exit(0);
         }
