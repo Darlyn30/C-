@@ -28,8 +28,8 @@ namespace projectoFinal {
             }
         }
         static void menu(){ // menu que se lanza
-        List<string>nombres = new List<string> {};
-        List<string> apellidos = new List<string> ();
+            List<string>nombres = new List<string> {};
+            List<string> apellidos = new List<string> ();
             List<int> tels = new List<int> ();
             List<string> direcciones = new List<string> ();
             List<string> correos = new List<string> ();
@@ -79,7 +79,7 @@ namespace projectoFinal {
             int menuContacto = Convert.ToInt32(Console.ReadLine());
             switch(menuContacto){
                 case 1:
-                    crearContacto(menuContacto);
+                    crearContacto(menuContacto, nombres);
                     break;
                 case 2:
                     editarContacto(menuContacto, elegir, nombres, apellidos, tels, direcciones, correos);
@@ -101,7 +101,7 @@ namespace projectoFinal {
                     break;
             }
         }
-        static void crearContacto(int menuContacto){
+        static void crearContacto(int menuContacto, List<string> nombres){
             Console.Clear();
             Console.Write("Crear contacto: \n");
             Console.Write("Nombre: ");
@@ -125,11 +125,12 @@ namespace projectoFinal {
             if(save == 's'){
                 Console.Clear();
                 Console.WriteLine("Contacto guardado correctamente! \n");
-                listanombre(nom!);
-                listaApellido(last!);
-                listaTelefonos(tel);
-                listaDireccion(adress!);
-                listaMail(mail!);
+                nombres.Add(nom!);
+                // listanombre(nom!);
+                // listaApellido(last!);
+                // listaTelefonos(tel);
+                // listaDireccion(adress!);
+                // listaMail(mail!);
                 Console.WriteLine("Presiona cualquier tecla para continuar . . .");
 
                 Console.ReadKey();
@@ -224,11 +225,57 @@ namespace projectoFinal {
             Console.WriteLine("Borrar contacto: \n");
             Console.WriteLine("Presione cualquier tecla para continuar . . .");
             Console.ReadKey();
-            Console.WriteLine("");
+            Console.Clear();
             mostrarContacto(menuContacto, nombres, apellidos, tels, direcciones, correos);
             string? nombre = Console.ReadLine();
+           // if(){}
             nombres.Remove(nombre!);
+            for(int i = 0; i <= nombres.Count; i++){
+                if(nombre != nombres[i]){
+                    Console.WriteLine("El contacto no existe");
+                    Console.WriteLine("Presione cualquier tecla para buscar y borrar otro contacto");
+                    borrarContacto(menuContacto, nombres, apellidos, tels, direcciones, correos);
+                } else {
+                    Console.WriteLine($"Quiere borrar a {nombre} de su lista de contactos");
+                    Console.WriteLine("S/n");
+                    char delete = Console.ReadKey().KeyChar;
+                    if(delete == 's'){
+                        Console.WriteLine("El contacto ha sido borrado con exito!");
+                        Console.WriteLine("Presione cualquier tecla para continuar");
+                        Console.ReadKey();
+                        Console.Clear();
+                        menu();
+                    } else if(delete == 'n'){
+                        Console.WriteLine("El contacto no se borro de la lista");
+                        Console.WriteLine("Presione cualquier  tecla para continuar . . .");
+                        Console.ReadKey();
+                        Console.Clear();
+                        menu();
+                    } else {
+                        Console.WriteLine("Opcion invalida");
+                        Console.WriteLine("Presione cualquier tecla para continuar . . .");
+                        Console.ReadKey();
+                        salir();
+                    }
+                }
+            }
            // if(nombre == ){}
+           Console.WriteLine("Presiona 's' para guardar");
+           char save = Console.ReadKey().KeyChar;
+           if(save == 's'){
+            Console.WriteLine("El contacto se borro exitosamente!");
+            Console.WriteLine("Presione cualquier tecla para continuar . . .");
+            Console.ReadKey();
+            Console.Clear();
+            mostrarContacto(menuContacto, nombres, apellidos, tels, direcciones, correos);
+           } else {
+            Console.WriteLine("No se guardaron los cambios");
+            Console.WriteLine("Presione cualquier tecla para continuar . . .");
+            Console.ReadKey();
+            Console.Clear();
+            menu();
+           }
+           
         }
         static void mostrarContacto(int menuContacto, List<string> nombres, List<string> apellidos, List<int> tels, List<string> direcciones, List<string> correos){
             foreach(string nombre in nombres){
@@ -747,3 +794,4 @@ namespace projectoFinal {
         }
     }
 }
+
