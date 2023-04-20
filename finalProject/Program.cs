@@ -5,7 +5,7 @@ namespace projectoFinal {
             Console.WriteLine("Bienvenido a nuestro programa \n");
             Console.WriteLine("Presione la tecla 'a' para continuar . . .");
             char brand = Console.ReadKey().KeyChar;
-            Console.Clear();
+            Console.Clear(); // aqui borra la consola y manda el menu o mensaje de error
             if(brand == 'a'){
                 //Console.Clear();
                 menu();
@@ -22,7 +22,7 @@ namespace projectoFinal {
                 }
             }
         }
-        static void menu(){
+        static void menu(){ // menu que se lanza
             Console.Clear();
             Console.WriteLine("\x1B[0;32m***********MENU***********\x1B[0;37m\n");
             Console.WriteLine("Que deseas hacer: \n");
@@ -127,6 +127,7 @@ namespace projectoFinal {
             Console.WriteLine("Borrar contacto: \n");
             Console.WriteLine("Presione cualquier tecla para continuar . . .");
             Console.ReadKey();
+            Console.WriteLine("");
             mostrarContacto(menuContacto);
         }
         static void mostrarContacto(int menuContacto){}
@@ -137,14 +138,74 @@ namespace projectoFinal {
             Console.WriteLine("2) [Editar evento]");
             Console.WriteLine("3) [Borrar evento]");
             Console.WriteLine("4) [Buscar evento]");
-            Console.WriteLine("4) [Mostrar eventos]");
-            Console.WriteLine("5) [Volver al menu principal]");
-            Console.WriteLine("5) [Salir]");
-            int menuContacto = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("5) [Mostrar eventos]");
+            Console.WriteLine("6) [Volver al menu principal]");
+            Console.WriteLine("7) [Salir]");
+            int menuEvento = Convert.ToInt32(Console.ReadLine());
+            switch(menuEvento){
+                case 1:
+                    crearEvento(menuEvento, elegir);
+                    break;
+                case 2:
+                    editarEvento(menuEvento);
+                    break;
+                case 3: 
+                    borrarEvento(menuEvento);
+                    break;
+                case 4:
+                    buscarEvento(menuEvento);
+                    break;
+                case 5:
+                    mostrarEvento(menuEvento);
+                    break;
+                case 6:
+                    menu();
+                    break;
+                case 7:
+                    salir();
+                    break;  
+            }
         }
-        static void salir(){ // animacion
+        static void crearEvento(int menuEvento, int elegir){
+            Console.Clear();
+            Console.WriteLine("Crear evento: \n");
+            Console.Write("Nombre de evento: ");
+            string? nomEvent = Console.ReadLine();
+            Console.Write("Fecha de evento: ");
+            string? dateTime = Console.ReadLine();
+            Console.WriteLine("\n");
+            Console.WriteLine("Presiona 's' para guardar . . .");
+            char save = Console.ReadKey().KeyChar;
+            if(save == 's'){
+                Console.Clear();
+                Console.WriteLine("EVENTO GUARDADO CORRECTAMENTE!\n");
+                Console.WriteLine("Presione cualquier tecla para volver atras . . .");
+                Console.Clear();
+                evento(elegir);
+            } else {
+                while(save != 's'){
+                Console.WriteLine("No se ha podido guardar el evento \n");
+                Console.WriteLine("Presiona cualquier tecla para continuar . . .");
+                Console.ReadKey();
+                Console.Clear();
+                evento(elegir);
+                }
+            }
+
+        }
+        static void editarEvento(int menuEvento){
+            Console.WriteLine("Que evento vas a editar? \n");
+            buscarEvento(menuEvento);
+        }
+        static void borrarEvento(int menuEvento){
+            mostrarEvento(menuEvento);
+        }
+        static void buscarEvento(int menuEvento){}
+        static void mostrarEvento(int menuEvento){}
+        static void salir(){ //falta animacion de salida
             Console.WriteLine("ADIOS . . .");
             Environment.Exit(0);
         }
+
     }
 }
