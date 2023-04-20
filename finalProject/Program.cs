@@ -23,6 +23,7 @@ namespace projectoFinal {
             }
         }
         static void menu(){ // menu que se lanza
+        List<string>nombres = new List<string> {};
             Console.Clear();
             Console.WriteLine("\x1B[0;32m***********MENU***********\x1B[0;37m\n");
             Console.WriteLine("Que deseas hacer: \n");
@@ -41,7 +42,7 @@ namespace projectoFinal {
             // }
             switch(elegir){ // casos para acceder al menu de arriba
                 case 1:
-                    contacto(elegir);
+                    contacto(elegir, nombres);
                     break;
                 case 2:
                     evento(elegir);
@@ -54,15 +55,15 @@ namespace projectoFinal {
                     break;
             }
         }
-        static void contacto(int elegir){
+        static void contacto(int elegir, List<string> nombres){
             Console.Clear();
             Console.WriteLine("Estas en contacto: \n");
             Console.WriteLine("que deseas hacer: \n");
             Console.WriteLine("1) [Crear contacto]");
             Console.WriteLine("2) [Editar contacto]");
             Console.WriteLine("3) [Borrar contacto]");
-            Console.WriteLine("4) [Buscar contacto]");
-            Console.WriteLine("5) [Mostrar contactos]");
+            Console.WriteLine("4) [Mostrar contacto]");
+            Console.WriteLine("5) [Buscar contactos]");
             Console.WriteLine("6) [Volver al menu principal]");
             Console.WriteLine("7) [Salir]");
             int menuContacto = Convert.ToInt32(Console.ReadLine());
@@ -74,10 +75,10 @@ namespace projectoFinal {
                     editarContacto(menuContacto);
                     break;
                 case 3:
-                    borrarContacto(menuContacto);
+                    borrarContacto(menuContacto, nombres);
                     break;
                 case 4:
-                    mostrarContacto(menuContacto);
+                    mostrarContacto(menuContacto,nombres);
                     break;
                 case 5:
                     buscarContacto(menuContacto);
@@ -98,7 +99,7 @@ namespace projectoFinal {
             Console.Write("Apellido: ");
             string? last = Console.ReadLine();
             Console.Write("Telefono: ");
-            string? tel = Console.ReadLine();
+            int tel = Convert.ToInt32(Console.ReadLine());
             Console.Write("Direccion: ");
             string? adress = Console.ReadLine();
             Console.Write("Email: ");
@@ -108,6 +109,11 @@ namespace projectoFinal {
             char save = Console.ReadKey().KeyChar;
             if(save == 's'){
                 Console.WriteLine("Contacto guardado correctamente! \n");
+                listanombre(nom!, last!, tel, adress!, mail!);
+                listaApellido(nom!, last!, tel, adress!, mail!);
+                listaTelefonos(nom!, last!, tel, adress!, mail!);
+                listaDireccion(nom!, last!, tel, adress!, mail!);
+                listaMail(nom!, last!, tel, adress!, mail!);
                 Console.WriteLine("Presiona cualquier tecla para continuar . . .");
                 Console.ReadKey();
                 Console.Clear();
@@ -122,6 +128,26 @@ namespace projectoFinal {
                 }
             }
         }
+        static void listanombre(string nom, string last, int tel, string adress, string mail){
+            List<string>nombres = new List<string> {};
+            nombres.Add(nom);
+        }
+        static void  listaApellido(string nom, string last, int tel, string adress, string mail){
+            List<string>apellidos = new List<string> {};
+            apellidos.Add(last);
+        }
+        static void listaTelefonos(string nom, string last, int tel, string adress, string mail){
+            List<int>tels = new List<int> {};
+            tels.Add(tel);
+        }
+        static void listaDireccion(string nom, string last, int tel, string adress, string mail){
+            List<string>direcciones = new List<string> {};
+            direcciones.Add(adress);
+        }
+        static void listaMail(string nom, string last, int tel, string adress, string mail){
+            List<string>correos = new List<string> {};
+            correos.Add(mail);
+        }
         static void editarContacto(int menuContacto){
             Console.Clear();
             Console.WriteLine("Editar: \n");
@@ -134,15 +160,19 @@ namespace projectoFinal {
             Console.WriteLine("6) [Volver]");
             int menuEditar = Convert.ToInt32(Console.ReadLine());
         }
-        static void borrarContacto(int menuContacto){
+        static void borrarContacto(int menuContacto, List<string> nombres){
             Console.Clear();
             Console.WriteLine("Borrar contacto: \n");
             Console.WriteLine("Presione cualquier tecla para continuar . . .");
             Console.ReadKey();
             Console.WriteLine("");
-            mostrarContacto(menuContacto);
+            mostrarContacto(menuContacto, nombres);
         }
-        static void mostrarContacto(int menuContacto){}
+        static void mostrarContacto(int menuContacto, List<string> nombres){
+            foreach(string nombre in nombres){
+                Console.WriteLine(nombre);
+            }
+        }
         static void buscarContacto(int menuContacto){}
         static void evento(int elegir){
             Console.Clear();
@@ -254,7 +284,7 @@ namespace projectoFinal {
             }
         }
         static void moneda(int elegir, double rd, double eur, double dolar){
-            
+            Console.Clear();
             Console.WriteLine("convertir a: \n");
             e:
             Console.WriteLine("1) [USD A RD$]");
@@ -262,33 +292,37 @@ namespace projectoFinal {
             Console.WriteLine("3) [EUR A RD$]");
             Console.WriteLine("4) [EUR A USD]");
             Console.WriteLine("5) [RD$ A USD]");
-            Console.WriteLine("6) [RD A EUR]\n");
-            Console.WriteLine("7) [Volver]");
-            Console.WriteLine("8) [Salir]");
+            Console.WriteLine("6) [RD A EUR]");
+            Console.WriteLine("7) [Volver al menu principal]");
+            Console.WriteLine("8) [Volver al menu de utilitarios]");
+            Console.WriteLine("9) [Salir]");
             elegir = Convert.ToInt32(Console.ReadLine());
             switch(elegir){
                 case 1:
-                    dolarRD(elegir, rd);
+                    dolarRD(elegir, rd, dolar, eur);
                     break;
                 case 2:
-                    dolarEur(elegir, eur);
+                    dolarEur(elegir, eur, dolar, rd);
                     break;
                 case 3: 
-                    eurRD(elegir, rd);
+                    eurRD(elegir, rd, eur, dolar);
                     break;
                 case 4:
-                    eurDolar(elegir, dolar);
+                    eurDolar(elegir, dolar, eur, rd);
                     break;
                 case 5:
-                    rdDolar(elegir, dolar);
+                    rdDolar(elegir, dolar, eur, rd);
                     break;
                 case 6:
-                    rdEur(elegir, eur);
+                    rdEur(elegir, eur, rd, dolar);
                     break;
                 case 7:
-                    utiliarios(elegir, rd, eur, dolar);
+                    menu();
                     break;
                 case 8:
+                    utiliarios(elegir, rd, eur, dolar);
+                    break;
+                case 9:
                     salir();
                     break;
                 default:
@@ -297,75 +331,296 @@ namespace projectoFinal {
                     goto e;
             }
         }
-        static void dolarRD(int elegir, double rd){
+        static void temperatura(double f, double c, double k, int elegir, double eur, double dolar, double rd){
+            o:
+            Console.Clear();
+            Console.WriteLine("Convertidor de temperaturas\n");
+            Console.WriteLine("1) [Fahrenheit a Celsius]");
+            Console.WriteLine("2) [Farenheit a Kelvin]");
+            Console.WriteLine("3) [Celcius a Fahrenheit]");
+            Console.WriteLine("4) [Celsius a Kelvin]");
+            Console.WriteLine("5) [Kelvin a Fahrenheit]");
+            Console.WriteLine("6) [Kelvin a Celsius]");
+            Console.WriteLine("7) [Volver al menu de utilitarios]");
+            Console.WriteLine("8) [Volver al menu principal]");
+            Console.WriteLine("8) [Salir]");
+            int opt = Convert.ToInt32(Console.ReadLine());
+            switch(opt){
+                case 1:
+                    fC(f, c, k);
+                    break;
+                case 2:
+                    fK(f, c, k);
+                    break;
+                case 3: 
+                    cF(f, c, k);
+                    break;
+                case 4: 
+                    cK(f, c, k);
+                    break;
+                case 5:
+                    kF(f, c, k);
+                    break;
+                case 6:
+                    kC(f, c, k);
+                    break;
+                case 7:
+                    utiliarios(elegir, rd, eur ,dolar);
+                    break;
+                case 8: 
+                    menu();
+                    break;
+                case 9:
+                    salir();
+                    break;
+                default:
+                    Console.WriteLine("Con nintendo no se jode boludito");
+                    Console.WriteLine("Presiona cualquier tecla para continuar . . .");
+                    Console.ReadKey();
+                    goto o;
+            }
+        }
+        // TEMPERATURAS
+        static void fK(double f, double c, double k){
+            Console.Clear();
+            Console.WriteLine("Ingresa el valor en grados Kelvin");
+            k = Convert.ToDouble(Console.ReadLine());
+            double conver = Convert.ToDouble((k - 273.15) * 9 / 5 + 32);
+            Console.WriteLine($"{k} grados Kelvin es igual a {conver} grados Fahrenheit");
+        }
+        static void fC(double f, double c, double k){
+            Console.Clear();
+            Console.WriteLine("Ingrese el valor en grados Fahrinheit: ");
+            f = Convert.ToDouble(Console.ReadLine());
+            double conver = Convert.ToDouble((f - 32) * 5 / 9);
+            Console.WriteLine($"{f} grados Fahrenheit es igual a {conver} grados Celsius");
+        }
+        static void cF(double f, double c, double k){
+            Console.Clear();
+            Console.WriteLine("Ingresa el valor en grados Celsius");
+            c = Convert.ToDouble(Console.ReadLine());
+            double conver = Convert.ToDouble((c * 9 / 5) + 32);
+            Console.WriteLine($"{c} grados Celcius es igual a {conver} grados Fahrenheit");
+        }
+        static void cK(double f, double c, double k){
+            Console.Clear();
+            Console.WriteLine("Ingresa el valor en grados Celsius");
+            c = Convert.ToDouble(Console.ReadLine());
+            double conver = Convert.ToDouble((c * 9 / 5) + 32);
+            Console.WriteLine($"{c} grados Celsius es igual a {conver} grados Kelvin");
+        }
+        static void kF(double f, double c, double k){
+            Console.Clear();
+            Console.WriteLine("Ingresa el valor en grados Kelvin");
+            k = Convert.ToDouble(Console.ReadLine());
+            double conver = Convert.ToDouble((k - 273.15) * 9 / 5 + 32);
+            Console.WriteLine($"{k} grados Kelvin es igual a {conver} grados Fahrenheit");
+        }
+        static void kC(double f, double c, double k){
+            Console.Clear();
+            Console.WriteLine("Ingresa el valor en grados Kelvin");
+            k = Convert.ToDouble(Console.ReadLine());
+            double conver = Convert.ToDouble(k - 273.15);
+            Console.WriteLine($"{k} grados Kelvin es igual a {conver} grados Fahrenheit");
+        }
+        static void dolarRD(int elegir, double rd, double dolar, double eur){
             Console.WriteLine("Ingrese moneda dominicana");
             rd = Convert.ToDouble(Console.ReadLine());
             double conver = Convert.ToDouble(rd / 55.16);
             Console.WriteLine($"{rd} pesos son {conver} dolares");
+            Console.WriteLine("\n");
+            Console.WriteLine("Presiona 'a' para volver al menu de utilitarios");
+            Console.WriteLine("Presiona 'w' para volver al menu principal");
+            char back = Console.ReadKey().KeyChar;
+            if(back == 'a'){
+                utiliarios(elegir, rd, eur, dolar);
+            } else if(back == 'w'){
+                menu();
+            } else {
+                while(back != 'a' || back != 'w'){
+                    Console.WriteLine("Opcion no encontrada");
+                    Console.WriteLine("Por favor introducir una opcion valida");
+                    back = Console.ReadKey().KeyChar;
+                    if(back == 'a'){
+                    utiliarios(elegir, rd, eur, dolar);
+                    } else if(back == 'w'){
+                        menu();
+                    }
+                }
+            }
         }
-        static void dolarEur(int elegir, double eur){
+        static void dolarEur(int elegir, double eur, double dolar, double rd){
             Console.WriteLine("Ingresa moneda EUR");
             eur = Convert.ToDouble(Console.ReadLine());
             
             double conver = Convert.ToDouble(eur / 0.98);
             Console.WriteLine($"{eur} euros son {conver}");
+            Console.WriteLine("\n");
+            Console.WriteLine("Presiona 'a' para volver al menu de utilitarios");
+            Console.WriteLine("Presiona 'w' para volver al menu principal");
+            char back = Console.ReadKey().KeyChar;
+            if(back == 'a'){
+                utiliarios(elegir, rd, eur, dolar);
+            } else if(back == 'w'){
+                menu();
+            } else {
+                while(back != 'a' || back != 'w'){
+                    Console.Clear();
+                    Console.WriteLine("Opcion no encontrada");
+                    Console.WriteLine("Por favor introducir una opcion valida");
+                    back = Console.ReadKey().KeyChar;
+                    if(back == 'a'){
+                    utiliarios(elegir, rd, eur, dolar);
+                    } else if(back == 'w'){
+                        menu();
+                    }
+                }
+            }
 
         }
-        static void eurRD(int elegir, double rd){
+        static void eurRD(int elegir, double rd, double eur, double dolar){
             Console.WriteLine("Ingresa moneda dominicana");
             rd = Convert.ToDouble(Console.ReadLine());
             double conver = Convert.ToDouble(rd / 60.33);
             Console.WriteLine($"{rd} pesos son {conver} euros");
+            Console.WriteLine("\n");
+            Console.WriteLine("Presiona 'a' para volver al menu de utilitarios");
+            Console.WriteLine("Presiona 'w' para volver al menu principal");
+            char back = Console.ReadKey().KeyChar;
+            if(back == 'a'){
+                utiliarios(elegir, rd, eur, dolar);
+            } else if(back == 'w'){
+                menu();
+            } else {
+                while(back != 'a' || back != 'w'){
+                    Console.Clear();
+                    Console.WriteLine("Opcion no encontrada");
+                    Console.WriteLine("Por favor introducir una opcion valida");
+                    back = Console.ReadKey().KeyChar;
+                    if(back == 'a'){
+                    utiliarios(elegir, rd, eur, dolar);
+                    } else if(back == 'w'){
+                        menu();
+                    }
+                }
+            }
         }
-        static void eurDolar(int elegir, double dolar){
+        static void eurDolar(int elegir, double dolar, double rd, double eur){
             Console.WriteLine("Ingresa moneda dolar");
             dolar = Convert.ToDouble(Console.ReadLine());
             double  conver = Convert.ToDouble(dolar / 1.09);
             Console.WriteLine($"{dolar} dolares son {conver} euros");
+            Console.WriteLine("\n");
+            Console.WriteLine("Presiona 'a' para volver al menu de utilitarios");
+            Console.WriteLine("Presiona 'w' para volver al menu principal");
+            char back = Console.ReadKey().KeyChar;
+            if(back == 'a'){
+                utiliarios(elegir, rd, eur, dolar);
+            } else if(back == 'w'){
+                menu();
+            } else {
+                while(back != 'a' || back != 'w'){
+                    Console.WriteLine("Opcion no encontrada");
+                    Console.WriteLine("Por favor introducir una opcion valida");
+                    back = Console.ReadKey().KeyChar;
+                    if(back == 'a'){
+                    utiliarios(elegir, rd, eur, dolar);
+                    } else if(back == 'w'){
+                        menu();
+                    }
+                }
+            }
         }
-        static void rdDolar(int elegir, double dolar){
+        static void rdDolar(int elegir, double dolar, double eur, double rd){
             Console.WriteLine("Ingresa moneda dolar");
             dolar = Convert.ToDouble(Console.ReadLine());
             double conver = Convert.ToDouble(dolar / 0.018);
             Console.WriteLine($"{dolar} dolares son {conver} pesos dominicanos");
+            Console.WriteLine("\n");
+            Console.WriteLine("Presiona 'a' para volver al menu de utilitarios");
+            Console.WriteLine("Presiona 'w' para volver al menu principal");
+            char back = Console.ReadKey().KeyChar;
+            if(back == 'a'){
+                utiliarios(elegir, rd, eur, dolar);
+            } else if(back == 'w'){
+                menu();
+            } else {
+                while(back != 'a' || back != 'w'){
+                    Console.WriteLine("Opcion no encontrada");
+                    Console.WriteLine("Por favor introducir una opcion valida");
+                    back = Console.ReadKey().KeyChar;
+                    if(back == 'a'){
+                    utiliarios(elegir, rd, eur, dolar);
+                    } else if(back == 'w'){
+                        menu();
+                    }
+                }
+            }
+
         }
-        static void rdEur(int elegir, double eur){
+        static void rdEur(int elegir, double eur, double rd, double dolar){
             Console.WriteLine("Ingresa moneda EUR");
             eur = Convert.ToDouble(Console.ReadLine());
             double conver = Convert.ToDouble(eur / 0.017);
             Console.WriteLine($"{eur} euros son {conver} pesos dominicanos");
+                        Console.WriteLine("\n");
+            Console.WriteLine("Presiona 'a' para volver al menu de utilitarios");
+            Console.WriteLine("Presiona 'w' para volver al menu principal");
+            char back = Console.ReadKey().KeyChar;
+            if(back == 'a'){
+                utiliarios(elegir, rd, eur, dolar);
+            } else if(back == 'w'){
+                menu();
+            } else {
+                while(back != 'a' || back != 'w'){
+                    Console.WriteLine("Opcion no encontrada");
+                    Console.WriteLine("Por favor introducir una opcion valida");
+                    back = Console.ReadKey().KeyChar;
+                    if(back == 'a'){
+                    utiliarios(elegir, rd, eur, dolar);
+                    } else if(back == 'w'){
+                        menu();
+                    }
+                }
+            }
         }
         static void calculadora(int elegir){
             // animacion();
             Console.Clear();
             Console.Write("Ingresa el primer dato: ");
-            int n1 = Convert.ToInt32(Console.ReadLine());
+            double n1 = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("+");
             Console.WriteLine("-");
             Console.WriteLine("*");
             Console.WriteLine("/ \n");
             Console.Write("Ingresa el operador: ");
-            char operacion = Console.ReadKey().KeyChar;
-            Console.ReadKey();
+            string? operacion = Console.ReadLine();
+            // if(operacion != "+" || operacion != "-" || operacion != "*" || operacion != "/"){
+            //     while(operacion != "+" || operacion != "-" || operacion != "*" || operacion != "/"){
+            //         Console.WriteLine("El operador al que intentaste acceder no existe");
+            //         Console.WriteLine("Por favor intente hacer el calculo de nuevo");
+            //         calculadora(elegir);
+            //     }
+           // }
             Console.WriteLine("Ingresa el segundo dato");
-            int n2 = Convert.ToInt32(Console.ReadLine());
+            double n2 = Convert.ToInt32(Console.ReadLine());
             switch(operacion){
-                case '+':
-                    Console.WriteLine($"{n1} + {n2} = {n1+n2}");
+                case "+":
+                    suma(n1, n2);
                     break;
-                case '-':
-                    Console.WriteLine($"{n1} - {n2} = {n1-n2}");
+                case "-":
+                    resta(n1, n2);
                     break;
-                case '*':
-                    Console.WriteLine($"{n1} * {n2} = {n1*n2}");
+                case "*":
+                    multi(n1, n2);
                     break;
-                case '/':
-                    Console.WriteLine($"{n1} / {n2} = {n1/n2}");
+                case "/":
+                    div(n1, n2);
                     break;
-                default:
-                    // while(operacion != '+' || operacion != '-' || operacion != '*' || operacion != '/'){
+                // default:
+                //     // while(operacion != '+' || operacion != '-' || operacion != '*' || operacion != '/'){
 
-                    break;
+                //     break;
                   // goto i;
                 }
             Console.WriteLine("Presiona Cualquier tecla para continuar . . .");
@@ -389,6 +644,18 @@ namespace projectoFinal {
                     backCal = Console.ReadKey().KeyChar;
                 }
             }
+        }
+        static void suma(double n1, double n2){
+            Console.WriteLine($"{n1} + {n2} = {n1+n2}");
+        }
+        static void resta(double n1, double n2){
+            Console.WriteLine($"{n1} - {n2} = {n1-n2}");
+        }
+        static void multi(double n1, double n2){
+            Console.WriteLine($"{n1} * {n2} = {n1*n2}");
+        }
+        static void div(double n1, double n2){
+            Console.WriteLine($"{n1} / {n2} = {n1/n2}");
         }
         static void salir(){ //falta animacion de salida
         Console.Clear();
