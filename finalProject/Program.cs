@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 namespace projectoFinal {
     class Program {
 
@@ -7,6 +7,12 @@ namespace projectoFinal {
         static List<string> tels = new List<string>();
         static List<string> direcciones = new List<string>();
         static List<string> correos = new List<string>();
+        // replace name 
+        static List<string> namesEdit = new List<string>();
+        static List<string> lastEdit = new List<string>();
+        static List<string> telsEdit = new List<string>();
+        static List<string> adressEdit = new List<string>();
+        static List<string> mailsEdit = new List<string>();
         // eventos
         static List<string> nombreEventos = new List<string>();
         static List<string> fecha = new List<string>();
@@ -82,7 +88,7 @@ namespace projectoFinal {
             int menuContacto = Convert.ToInt32(Console.ReadLine());
             switch(menuContacto){
                 case 1:
-                    crearContacto(menuContacto, nombres, apellidos, tels, direcciones, correos);
+                    crearContacto(menuContacto, nombres,namesEdit, apellidos, tels, direcciones, correos);
                     break;
                 case 2:
                     editarContacto(menuContacto, elegir, nombres, apellidos, tels, direcciones, correos);
@@ -104,7 +110,7 @@ namespace projectoFinal {
                     break;
             }
         }
-        static void crearContacto(int menuContacto, List<string> nombres, List<string> apellidos, List<string> tels, List<string> direcciones, List<string> correos){
+        static void crearContacto(int menuContacto, List<string> nombres,List<string> namesEdit, List<string> apellidos, List<string> tels, List<string> direcciones, List<string> correos){
             Console.Clear();
             Console.Write("Crear contacto: \n");
             Console.Write("Nombre: ");
@@ -199,7 +205,7 @@ namespace projectoFinal {
             int menuEditar = Convert.ToInt32(Console.ReadLine());
             switch(menuEditar){
                 case 1:
-                    editarNombre(menuContacto, elegir, nombres, apellidos, tels, direcciones, correos);
+                    editarNombre(menuContacto, elegir, nombres, namesEdit, apellidos, tels, direcciones, correos); 
                     break;
                 case 2:
                     editarApellido(menuContacto, elegir, nombres, apellidos, tels, direcciones, correos);
@@ -223,27 +229,31 @@ namespace projectoFinal {
                     break;
                 
             }
-            static void editarNombre(int menuContacto, int elegir, List<string> nombres, List<string> apellidos, List<string> tels, List<string> direcciones, List<string> correos){
+            static void editarNombre(int menuContacto, int elegir, List<string> nombres,List<string> namesEdit, List<string> apellidos, List<string> tels, List<string> direcciones, List<string> correos){
                 
                     Console.WriteLine("Nuevo nombre: ");
-                    string? nom = Console.ReadLine();
+                    string? nombreNew = Console.ReadLine();
                     // listanombre(nom!);
                     Console.WriteLine("Presione 's' para guardar");
                     char save = Console.ReadKey().KeyChar;
                     if(save == 's'){
-                        Console.WriteLine($"El nombre de {nom} ha sido actualizado exitosamente!");
+                        Console.WriteLine($"El nombre de {nombreNew} ha sido actualizado exitosamente!");
                         // editarContacto(menuContacto, elegir, nombres, apellidos, tels, direcciones, correos);
-                        nombres.Remove(nom!);
+                        namesEdit.Add(nombreNew!);
+                        Console.WriteLine(namesEdit[0]);
                         // nombres.Add(nom!);
-                        nombres.IndexOf(nom!);
-                        mostrarContacto(menuContacto, nombres, apellidos, tels, direcciones, correos);
+                        // nombres.IndexOf(nom!);
+                        // mostrarContacto(menuContacto, nombres, apellidos, tels, direcciones, correos);
                         Console.WriteLine("Presiona cualquier tecla para volver al menu de editar");
                         Console.ReadKey();
                         editarContacto(menuContacto, elegir, nombres, apellidos, tels, direcciones, correos);
                         // Guardar elementos en sus respectivos arrays
-                        nombres.Add(nom!);
+                        // nombres.Add(nom!);
                         
-               
+            //    static void nombreEdit(List<string> nombres, string? nameEdit){
+            //     namesEdit.Add(nombre!);
+            //     // namesEdit.
+            //    }
                 
                 
                 
@@ -252,15 +262,16 @@ namespace projectoFinal {
             }
             static void editarApellido(int menuContacto, int elegir, List<string> nombres, List<string> apellidos, List<string> tels, List<string> direcciones, List<string> correos){
                 Console.WriteLine("Nuevo apellido");
-                string? last = Console.ReadLine();
+                string? lastNew = Console.ReadLine();
                 Console.WriteLine("Presione 's' para guardar");
                     char save = Console.ReadKey().KeyChar;
                     if(save == 's'){
                         Console.Clear();
-                        Console.WriteLine($"El nombre de {last} ha sido actualizado exitosamente!");
+                        Console.WriteLine($"El apellido de {last} ha sido actualizado exitosamente!");
                         // editarContacto(menuContacto, elegir, nombres, apellidos, tels, direcciones, correos);
-                        apellidos.IndexOf(last!);
-                        mostrarContacto(menuContacto, nombres, apellidos, tels, direcciones, correos);
+                        lastEdit.Add(lastNew!);
+                        Console.WriteLine(lastEdit[0]);
+                        // mostrarContacto(menuContacto, nombres, apellidos, tels, direcciones, correos);
                         Console.WriteLine("Presiona cualquier tecla para volver al menu de editar");
                         Console.ReadKey();
                         editarContacto(menuContacto, elegir, nombres, apellidos, tels, direcciones, correos);
@@ -270,15 +281,16 @@ namespace projectoFinal {
              }
             static void editarNumero(int menuContacto, int elegir, List<string> nombres, List<string> apellidos, List<string> tels, List<string> direcciones, List<string> correos){
                 Console.WriteLine("Nuevo telefono");
-                string? tel = Console.ReadLine();
+                string? telNew = Console.ReadLine();
                 Console.WriteLine("Presione 's' para guardar");
                     char save = Console.ReadKey().KeyChar;
                     if(save == 's'){
                         Console.Clear();
-                        Console.WriteLine($"El nombre de {tel} ha sido actualizado exitosamente!");
+                        Console.WriteLine($"El telefono de {tel} ha sido actualizado exitosamente!");
                         // editarContacto(menuContacto, elegir, nombres, apellidos, tels, direcciones, correos);
-                        tels.IndexOf(tel!);
-                        mostrarContacto(menuContacto, nombres, apellidos, tels, direcciones, correos);
+                        telsEdit.Add(telNew!);
+                        Console.WriteLine(telsEdit[0]);
+                        // mostrarContacto(menuContacto, nombres, apellidos, tels, direcciones, correos);
                         Console.WriteLine("Presiona cualquier tecla para volver al menu de editar");
                         Console.ReadKey();
                         editarContacto(menuContacto, elegir, nombres, apellidos, tels, direcciones, correos);
@@ -288,15 +300,16 @@ namespace projectoFinal {
              }
             static void editarDireccion(int menuContacto, int elegir, List<string> nombres, List<string> apellidos, List<string> tels, List<string> direcciones, List<string> correos){
                 Console.WriteLine("Nueva direccion");
-                string? adress = Console.ReadLine();
+                string? adressNew = Console.ReadLine();
                 Console.WriteLine("Presione 's' para guardar");
                     char save = Console.ReadKey().KeyChar;
                     if(save == 's'){
                         Console.Clear();
-                        Console.WriteLine($"El nombre de {adress} ha sido actualizado exitosamente!");
+                        Console.WriteLine($"la direccion de {adressNew} ha sido actualizado exitosamente!");
                         // editarContacto(menuContacto, elegir, nombres, apellidos, tels, direcciones, correos);
-                        direcciones.IndexOf(adress!);
-                        mostrarContacto(menuContacto, nombres, apellidos, tels, direcciones, correos);
+                        adressEdit.Add(adressNew!);
+                        Console.WriteLine(adressEdit[0]);
+                        // mostrarContacto(menuContacto, nombres, apellidos, tels, direcciones, correos);
                         Console.WriteLine("Presiona cualquier tecla para volver al menu de editar");
                         Console.ReadKey();
                         editarContacto(menuContacto, elegir, nombres, apellidos, tels, direcciones, correos);
@@ -308,16 +321,17 @@ namespace projectoFinal {
             }
             static void editarMail(int menuContacto, int elegir, List<string> nombres, List<string> apellidos, List<string> tels, List<string> direcciones, List<string> correos){
                 Console.WriteLine("Nuevo correo");
-                string? mail = Console.ReadLine();
+                string? mailNew = Console.ReadLine();
                 // listaMail(mail!);
                 Console.WriteLine("Presione 's' para guardar");
                     char save = Console.ReadKey().KeyChar;
                     if(save == 's'){
                         Console.Clear();
-                        Console.WriteLine($"El nombre de {mail} ha sido actualizado exitosamente!");
+                        Console.WriteLine($"El Email de {mail} ha sido actualizado exitosamente!");
                         // editarContacto(menuContacto, elegir, nombres, apellidos, tels, direcciones, correos);
-                        correos.IndexOf(mail!);
-                        mostrarContacto(menuContacto, nombres, apellidos, tels, direcciones, correos);
+                        mailsEdit.Add(mailNew!);
+                        Console.WriteLine(mailsEdit[0]);
+                        // mostrarContacto(menuContacto, nombres, apellidos, tels, direcciones, correos);
                         Console.WriteLine("Presiona cualquier tecla para volver al menu de editar");
                         Console.ReadKey();
                         editarContacto(menuContacto, elegir, nombres, apellidos, tels, direcciones, correos);
@@ -509,6 +523,7 @@ namespace projectoFinal {
                     salir();
                 }
         }
+        static void mostrarContactoEditado(){}
 
         static void buscarContacto(int menuContacto, List<string> nombres){
             Console.WriteLine("Buscar contacto\n");
@@ -567,9 +582,9 @@ namespace projectoFinal {
                 Console.Clear();
                 Console.WriteLine("EVENTO GUARDADO CORRECTAMENTE!\n");
                 // guardar eventos
-                eventos.Add(eventName!);
-                eventos.Add(eventDate!);
-                eventos.Add(eventPlace!);
+                nombreEventos.Add(eventName!);
+                fecha.Add(eventDate!);
+                lugar.Add(eventPlace!);
                 Console.WriteLine("Presione cualquier tecla para volver atras . . .");
                 Console.ReadKey();
                 Console.Clear();
