@@ -61,4 +61,4 @@ if(pass == "darlyn123" ) {
 // por ejemplo variables declaradas pero no inicializada
 static void jugar(){
    console.WriteLine("hola, soy una funcion");
-}
+} 

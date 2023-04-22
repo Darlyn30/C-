@@ -1,0 +1,15 @@
+C:\Users\zombe\OneDrive\Downloads\programacion\C-\conocimientos-cSharp\bin\Debug\net7.0\conocimientos-cSharp.exe
+C:\Users\zombe\OneDrive\Downloads\programacion\C-\conocimientos-cSharp\bin\Debug\net7.0\conocimientos-cSharp.deps.json
+C:\Users\zombe\OneDrive\Downloads\programacion\C-\conocimientos-cSharp\bin\Debug\net7.0\conocimientos-cSharp.runtimeconfig.json
+C:\Users\zombe\OneDrive\Downloads\programacion\C-\conocimientos-cSharp\bin\Debug\net7.0\conocimientos-cSharp.dll
+C:\Users\zombe\OneDrive\Downloads\programacion\C-\conocimientos-cSharp\bin\Debug\net7.0\conocimientos-cSharp.pdb
+C:\Users\zombe\OneDrive\Downloads\programacion\C-\conocimientos-cSharp\obj\Debug\net7.0\conocimientos-cSharp.csproj.AssemblyReference.cache
+C:\Users\zombe\OneDrive\Downloads\programacion\C-\conocimientos-cSharp\obj\Debug\net7.0\conocimientos-cSharp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\zombe\OneDrive\Downloads\programacion\C-\conocimientos-cSharp\obj\Debug\net7.0\conocimientos-cSharp.AssemblyInfoInputs.cache
+C:\Users\zombe\OneDrive\Downloads\programacion\C-\conocimientos-cSharp\obj\Debug\net7.0\conocimientos-cSharp.AssemblyInfo.cs
+C:\Users\zombe\OneDrive\Downloads\programacion\C-\conocimientos-cSharp\obj\Debug\net7.0\conocimientos-cSharp.csproj.CoreCompileInputs.cache
+C:\Users\zombe\OneDrive\Downloads\programacion\C-\conocimientos-cSharp\obj\Debug\net7.0\conocimientos-cSharp.dll
+C:\Users\zombe\OneDrive\Downloads\programacion\C-\conocimientos-cSharp\obj\Debug\net7.0\refint\conocimientos-cSharp.dll
+C:\Users\zombe\OneDrive\Downloads\programacion\C-\conocimientos-cSharp\obj\Debug\net7.0\conocimientos-cSharp.pdb
+C:\Users\zombe\OneDrive\Downloads\programacion\C-\conocimientos-cSharp\obj\Debug\net7.0\conocimientos-cSharp.genruntimeconfig.cache
+C:\Users\zombe\OneDrive\Downloads\programacion\C-\conocimientos-cSharp\obj\Debug\net7.0\ref\conocimientos-cSharp.dll
