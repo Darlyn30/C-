@@ -56,9 +56,9 @@ if(pass == "darlyn123" ) {
 }
 
 // como llamar funciones en c#
-
-static void Main(string[] args){
-   // ahora mismo ya me defiendo en c#, tenia meses sin actualizar este archivo
-   // hare un programa medio complejo
-   // por cierto eso del static void es la funcion, no se llaman como en js con la reserva de "function"
+// las funcioes se declaran distinto a js, aqui no es con la reserva function sino con la reserva "static void<function Name>(){}"
+//algunas veces es necesario que usas parametros dentro de las funciones y estos se ponen en el parentesis, estos parametros son 
+// por ejemplo variables declaradas pero no inicializada
+static void jugar(){
+   console.WriteLine("hola, soy una funcion");
 }
