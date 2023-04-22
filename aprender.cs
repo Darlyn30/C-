@@ -33,7 +33,10 @@ var name = Console.ReadLine();
 Console.WriteLine("ingrese su apellido");
 var surName = Console.ReadLine();
 Console.WriteLine("hola bienvenido: " + name + " " + surName); //coloque esas comillas para que haya un espacio entre las 2 variables cuando lo muestre a la consola
-
+Console.WriteLine($"hola bienvenido {name} y {surName}"); // esto es una forma distinta de concatenacion, que me gusta usarla mucho
+// ultimamente
+// aca otra
+Console.WriteLine("hola bienvenido {0} y {1}", name, surName); // esta no me gusta tanto
 
 //condicionales
 
@@ -44,10 +47,11 @@ Console.WriteLine("hola bienvenido: " + name + " " + surName); //coloque esas co
 
 // hacer un programa que solicite password, y si es incorrecta mandar un mensaje de error
 
-
+// este es el request
 Console.WriteLine("ingrese la contraseña");
 var pass = Console.ReadLine();
 
+// estas son las condiciones de salida al request pedido
 if(pass == "darlyn123" ) {
 
    Console.WriteLine ("Bienvenido ITLA Virtual");
@@ -61,4 +65,5 @@ if(pass == "darlyn123" ) {
 // por ejemplo variables declaradas pero no inicializada
 static void jugar(){
    console.WriteLine("hola, soy una funcion");
-} 
+}
+// esta funcion solo imprime el texto dentro del write line 
