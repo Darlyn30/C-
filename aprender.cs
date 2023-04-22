@@ -54,3 +54,11 @@ if(pass == "darlyn123" ) {
 } else{
 	Console.WriteLine("error");
 }
+
+// como llamar funciones en c#
+
+static void Main(string[] args){
+   // ahora mismo ya me defiendo en c#, tenia meses sin actualizar este archivo
+   // hare un programa medio complejo
+   // por cierto eso del static void es la funcion, no se llaman como en js con la reserva de "function"
+}
