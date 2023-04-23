@@ -1,2 +1,4 @@
 esta sera una aplicacion multifuncion que tendra varias opciones como salir, volver al menu
 jugar(juego en proceso de pensar), crear cuenta e iniciar sesion
+borrar cuenta
+etc
