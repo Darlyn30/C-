@@ -12,7 +12,28 @@ namespace conocimientos {
             /*
             hacer un array y que introduzca 10 numeros e identifique si son negativos o positivos
             */
-            // for(int ){}
+            int [] num = new int[10];
+            for(int i = 0; i <= num.Length; i++){
+                Console.WriteLine("ingrese un numero");
+                int numero  = Convert.ToInt32(Console.ReadLine());
+                if(num[i] > 1){
+                    Console.WriteLine("el numero introducido es positivo");
+                } else if(num[i] < 0){
+                    Console.WriteLine("el numero introducido es negativo");
+                } else {
+                    Console.WriteLine("el numero es neutro");
+                }
+            }
+            for(int i = 0; i <= num.Length; i++){
+                if(num[i] > 1){
+                    Console.WriteLine($"{num[i]} positivo");
+                } else if(num[i] < 0){
+                    Console.WriteLine($"{num[i]} negativo");
+                } else if(num[i] == 0){
+                    Console.WriteLine($"{num[i]} neutro");
+                }
+                // Console.WriteLine(num.Contains(i));
+            }
         }
     }
 }
