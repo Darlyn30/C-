@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Descargas\\finalProject\\finalProject\\finalProject.csproj",
+      "projectUniqueName": "C:\\Users\\zombe\\OneDrive\\Downloads\\programacion\\C-\\finalProject\\finalProject.csproj",
       "projectName": "finalProject",
-      "projectPath": "D:\\Descargas\\finalProject\\finalProject\\finalProject.csproj",
+      "projectPath": "C:\\Users\\zombe\\OneDrive\\Downloads\\programacion\\C-\\finalProject\\finalProject.csproj",
       "packagesPath": "C:\\Users\\zombe\\.nuget\\packages\\",
-      "outputPath": "D:\\Descargas\\finalProject\\finalProject\\obj\\",
+      "outputPath": "C:\\Users\\zombe\\OneDrive\\Downloads\\programacion\\C-\\finalProject\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\zombe\\AppData\\Roaming\\NuGet\\NuGet.Config"

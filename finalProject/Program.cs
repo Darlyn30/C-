@@ -698,7 +698,7 @@ namespace projectoFinal {
         static void utiliarios(int elegir, double rd, double eur, double dolar){ 
             Console.Clear();
             Console.WriteLine("1) [Conversor de monedas]");
-            Console.WriteLine("1) [Conversor de temperatura]");
+            Console.WriteLine("2) [Conversor de temperatura]");
             Console.WriteLine("3) [Calculadora]");
             Console.WriteLine("4) [Volver]");
             Console.WriteLine("5) [Salir]");
@@ -708,6 +708,7 @@ namespace projectoFinal {
                     moneda(elegir, rd, eur, dolar);
                     break;
                 case 2:
+                //temperatura(f,c,k,elegir,eur,dolar,rd); // 
                     break;
                 case 3:
                     calculadora(elegir);

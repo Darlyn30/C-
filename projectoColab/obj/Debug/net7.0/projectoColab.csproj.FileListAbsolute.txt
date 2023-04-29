@@ -1,0 +1,15 @@
+C:\Users\zombe\OneDrive\Downloads\programacion\C-\projectoColab\bin\Debug\net7.0\projectoColab.exe
+C:\Users\zombe\OneDrive\Downloads\programacion\C-\projectoColab\bin\Debug\net7.0\projectoColab.deps.json
+C:\Users\zombe\OneDrive\Downloads\programacion\C-\projectoColab\bin\Debug\net7.0\projectoColab.runtimeconfig.json
+C:\Users\zombe\OneDrive\Downloads\programacion\C-\projectoColab\bin\Debug\net7.0\projectoColab.dll
+C:\Users\zombe\OneDrive\Downloads\programacion\C-\projectoColab\bin\Debug\net7.0\projectoColab.pdb
+C:\Users\zombe\OneDrive\Downloads\programacion\C-\projectoColab\obj\Debug\net7.0\projectoColab.csproj.AssemblyReference.cache
+C:\Users\zombe\OneDrive\Downloads\programacion\C-\projectoColab\obj\Debug\net7.0\projectoColab.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\zombe\OneDrive\Downloads\programacion\C-\projectoColab\obj\Debug\net7.0\projectoColab.AssemblyInfoInputs.cache
+C:\Users\zombe\OneDrive\Downloads\programacion\C-\projectoColab\obj\Debug\net7.0\projectoColab.AssemblyInfo.cs
+C:\Users\zombe\OneDrive\Downloads\programacion\C-\projectoColab\obj\Debug\net7.0\projectoColab.csproj.CoreCompileInputs.cache
+C:\Users\zombe\OneDrive\Downloads\programacion\C-\projectoColab\obj\Debug\net7.0\projectoColab.dll
+C:\Users\zombe\OneDrive\Downloads\programacion\C-\projectoColab\obj\Debug\net7.0\refint\projectoColab.dll
+C:\Users\zombe\OneDrive\Downloads\programacion\C-\projectoColab\obj\Debug\net7.0\projectoColab.pdb
+C:\Users\zombe\OneDrive\Downloads\programacion\C-\projectoColab\obj\Debug\net7.0\projectoColab.genruntimeconfig.cache
+C:\Users\zombe\OneDrive\Downloads\programacion\C-\projectoColab\obj\Debug\net7.0\ref\projectoColab.dll

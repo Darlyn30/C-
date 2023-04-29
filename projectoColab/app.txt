@@ -2,3 +2,4 @@ esta sera una aplicacion multifuncion que tendra varias opciones como salir, vol
 jugar(juego en proceso de pensar), crear cuenta e iniciar sesion
 borrar cuenta
 etc
+debe tener un menu
