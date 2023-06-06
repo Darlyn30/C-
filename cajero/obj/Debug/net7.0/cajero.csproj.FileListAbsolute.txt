@@ -1,0 +1,15 @@
+E:\programacion\project\cajero\bin\Debug\net7.0\cajero.exe
+E:\programacion\project\cajero\bin\Debug\net7.0\cajero.deps.json
+E:\programacion\project\cajero\bin\Debug\net7.0\cajero.runtimeconfig.json
+E:\programacion\project\cajero\bin\Debug\net7.0\cajero.dll
+E:\programacion\project\cajero\bin\Debug\net7.0\cajero.pdb
+E:\programacion\project\cajero\obj\Debug\net7.0\cajero.csproj.AssemblyReference.cache
+E:\programacion\project\cajero\obj\Debug\net7.0\cajero.GeneratedMSBuildEditorConfig.editorconfig
+E:\programacion\project\cajero\obj\Debug\net7.0\cajero.AssemblyInfoInputs.cache
+E:\programacion\project\cajero\obj\Debug\net7.0\cajero.AssemblyInfo.cs
+E:\programacion\project\cajero\obj\Debug\net7.0\cajero.csproj.CoreCompileInputs.cache
+E:\programacion\project\cajero\obj\Debug\net7.0\cajero.dll
+E:\programacion\project\cajero\obj\Debug\net7.0\refint\cajero.dll
+E:\programacion\project\cajero\obj\Debug\net7.0\cajero.pdb
+E:\programacion\project\cajero\obj\Debug\net7.0\cajero.genruntimeconfig.cache
+E:\programacion\project\cajero\obj\Debug\net7.0\ref\cajero.dll
